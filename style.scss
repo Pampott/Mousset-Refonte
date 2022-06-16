@@ -31,6 +31,7 @@ $light : #CDEDF6;
         @include flexColumn;
         //background: $light;
         box-shadow: 0px 5px 5px 0px rgba(4,42,43,0.61);
+        min-height: 80px;
         p {
             font-family: 'Permanent Marker', cursive;
             font-size: 1.7em;
@@ -58,28 +59,37 @@ $light : #CDEDF6;
         object-fit: contain;
     }
     ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-       // padding: 10px 0;
-        .first-block, .second-block {
-            margin: 10px 0;
+        @include flexColumn;
+        li {
+            list-style: none;
+            background: $light;
+            padding: 10px 15px;
+            margin: 8px;
+            border-radius: 10px;
+            width: 100%;
+            text-align: center;
+            color: $dark;
+            transition: all 0.3s;
+            &:hover {
+                background: $dark;
+                color: $light;
+                transition: all 0.3s;
+            }
+            a {
+                text-decoration: inherit;
+                color: inherit;
+                font-size: 14px;
+                //font-weight: bold;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
         }
     }
-    .links {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    li {
-        list-style: none;
-        margin: 4px;
-        a {
-            text-decoration: inherit;
-            color: inherit;
-            font-size: 15px;
-            margin: 0;
-        }
-    }
+
+        
 .contact__container {
     @include flexColumn;
 }
@@ -116,7 +126,15 @@ section {
 .video {
     width: 90%;
     height: 150px;
-    background: url(https://i.vimeocdn.com/video/991054857-03f8ccbd83da79cd26bcda4b7f13a6c9c0cc0f357e1058a6149122a27071ca49-d?mw=1000&mh=563&q=70);
-    object-fit: contain;
+    background: rgb(2,0,36);
+    background: linear-gradient(47deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-size: 600% 600%;
+    animation: bgAnim 10s ease infinite;
     
+}
+
+@keyframes bgAnim {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }

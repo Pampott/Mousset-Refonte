@@ -27,6 +27,7 @@ header {
           align-items: center;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(4, 42, 43, 0.61);
           box-shadow: 0px 5px 5px 0px rgba(4, 42, 43, 0.61);
+  min-height: 80px;
 }
 
 header p {
@@ -77,33 +78,42 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-ul .first-block, ul .second-block {
-  margin: 10px 0;
-}
-
-.links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-li {
+ul li {
   list-style: none;
-  margin: 4px;
+  background: #CDEDF6;
+  padding: 10px 15px;
+  margin: 8px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  color: #042A2B;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-li a {
+ul li:hover {
+  background: #042A2B;
+  color: #CDEDF6;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+ul li a {
   text-decoration: inherit;
   color: inherit;
-  font-size: 15px;
+  font-size: 14px;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .contact__container {
@@ -201,8 +211,34 @@ section h2 {
 .video {
   width: 90%;
   height: 150px;
-  background: url(https://i.vimeocdn.com/video/991054857-03f8ccbd83da79cd26bcda4b7f13a6c9c0cc0f357e1058a6149122a27071ca49-d?mw=1000&mh=563&q=70);
-  -o-object-fit: contain;
-     object-fit: contain;
+  background: #020024;
+  background: linear-gradient(47deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  background-size: 600% 600%;
+  -webkit-animation: bgAnim 10s ease infinite;
+          animation: bgAnim 10s ease infinite;
+}
+
+@-webkit-keyframes bgAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bgAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
