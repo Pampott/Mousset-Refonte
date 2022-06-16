@@ -1,0 +1,122 @@
+//Reset
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+@mixin imgDefault {
+    width: 180px;
+    height: 130px;
+    object-fit: contain;
+}
+
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+//Variables
+$dark : #042A2B;
+$medium : #5EB1BF;
+$light : #CDEDF6;
+//@media screen and (max-width: 470px) {
+    a {
+        margin: 5px 10px;
+        text-decoration: inherit;
+        color: inherit;
+    }
+    header {
+        @include flexColumn;
+        //background: $light;
+        box-shadow: 0px 5px 5px 0px rgba(4,42,43,0.61);
+        p {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.7em;
+        }
+       // padding-bottom: 20px;
+    }
+    footer {
+        @include flexColumn;
+        background: $dark;
+        color: $light;
+        font-weight: 300;
+        padding: 15px;
+        img {
+            width: 30px;
+            height: 30px;
+           // margin: 5px;
+        }
+        h3 {
+            font-weight: 300;
+        }
+    }
+    img {
+        width: 150px;
+        height: 100px;
+        object-fit: contain;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       // padding: 10px 0;
+        .first-block, .second-block {
+            margin: 10px 0;
+        }
+    }
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li {
+        list-style: none;
+        margin: 4px;
+        a {
+            text-decoration: inherit;
+            color: inherit;
+            font-size: 15px;
+            margin: 0;
+        }
+    }
+.contact__container {
+    @include flexColumn;
+}
+
+.icons {
+    @include flexColumn;
+    flex-direction: row;
+}
+
+main {
+    @include flexColumn;
+    margin: 20px 5%;
+    h1, h2 {
+        font-size: 19px;
+        //margin-bottom: 10px;
+    }
+}
+
+article {
+    @include flexColumn;
+    p {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+section {
+    @include flexColumn;
+    width: 100%;
+    h2 {
+        margin-bottom: 10px;
+    }
+}
+.video {
+    width: 90%;
+    height: 150px;
+    background: url(https://i.vimeocdn.com/video/991054857-03f8ccbd83da79cd26bcda4b7f13a6c9c0cc0f357e1058a6149122a27071ca49-d?mw=1000&mh=563&q=70);
+    object-fit: contain;
+    
+}
