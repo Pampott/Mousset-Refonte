@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 @mixin imgDefault {
     width: 180px;
@@ -21,6 +21,33 @@
 $dark : #042A2B;
 $medium : #5EB1BF;
 $light : #CDEDF6;
+
+//Keyframes
+@keyframes text-appear {
+    0% {
+      letter-spacing: 1em;
+      transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      letter-spacing: normal;
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes header-pos {
+    from {
+        height: 50em;
+    }
+    to {
+        height: 5em;
+    }
+  }
+  
 //@media screen and (max-width: 470px) {
     a {
         margin: 5px 10px;
@@ -29,12 +56,17 @@ $light : #CDEDF6;
     }
     header {
         @include flexColumn;
-        //background: $light;
-        box-shadow: 0px 5px 5px 0px rgba(4,42,43,0.61);
-        min-height: 80px;
+        background: $dark;
+        height: 50em;
+        animation: header-pos 0.5s ease-in-out both;
+        animation-delay: 1.3s;
         p {
-            font-family: 'Permanent Marker', cursive;
+            display: inline;
+            color: $light;
+            text-transform: uppercase;
+            font-family: 'Righteous', cursive;
             font-size: 1.7em;
+            animation: text-appear 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
         }
        // padding-bottom: 20px;
     }
@@ -61,14 +93,17 @@ $light : #CDEDF6;
     ul {
         @include flexColumn;
         flex-direction: row;
+        flex-wrap: wrap;
         margin: 15px;
         li {
+            @include flexColumn;
             list-style: none;
             background: $light;
             padding: 10px 15px;
-            margin: 8px;
+            margin: 6px;
             border-radius: 10px;
-            width: 100%;
+            width: 15rem;
+            height: 6rem;
             text-align: center;
             color: $dark;
             transition: all 0.3s;
@@ -79,6 +114,7 @@ $light : #CDEDF6;
             }
             a {
                 text-decoration: inherit;
+                display: contents;
                 color: inherit;
                 font-size: 14px;
                 //font-weight: bold;
@@ -126,12 +162,12 @@ section {
     }
 }
 .video {
-    width: 50%;
+    width: 100%;
     height: 300px;
-    background: rgb(2,0,36);
-    background: linear-gradient(47deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    background-size: 600% 600%;
-    animation: bgAnim 10s ease infinite;
+    position: relative;
+    iframe {
+        position: absolute;
+    }
     
 }
 
